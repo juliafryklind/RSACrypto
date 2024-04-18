@@ -10,13 +10,13 @@ class Program
         using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
         {
             // Kryptera och dekryptera meddelande
-            string originalMessage = "Hello, RSA!";
+            string originalMessage = Console.ReadLine();
             byte[] encryptedMessage = EncryptMessage(originalMessage, rsa);
             string decryptedMessage = DecryptMessage(encryptedMessage, rsa);
 
-            Console.WriteLine("Original message: " + originalMessage);
-            Console.WriteLine("Encrypted message: " + Convert.ToBase64String(encryptedMessage));
-            Console.WriteLine("Decrypted message: " + decryptedMessage);
+            Console.WriteLine("Ursprungliga meddelandet: " + originalMessage);
+            Console.WriteLine("Krypterat meddelandde: " + Convert.ToBase64String(encryptedMessage));
+            Console.WriteLine("Dekrypterat meddelande:: " + decryptedMessage);
         }
 
         Console.ReadLine();
